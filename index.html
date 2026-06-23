@@ -57,7 +57,7 @@ p { margin: 0; }
 
 /* ===== BUTTON STYLE (matches .g button.btn.f-btn) ===== */
 .g-btn {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -67,11 +67,14 @@ p { margin: 0; }
     font-size: 15px;
     line-height: 1.4;
     font-weight: 600;
+    font-family: 'Gilroy', Roboto, sans-serif;
     border-radius: 100px;
     padding: 20px;
     width: 100%;
+    box-sizing: border-box;
     transition: all 0.2s;
-    font-family: 'Gilroy', Roboto, sans-serif;
+    outline: none;
+    z-index: 1;
 }
 .g-btn:hover {
     opacity: 0.9;
@@ -80,13 +83,6 @@ p { margin: 0; }
 }
 .g-btn:active { transform: translateY(2px); box-shadow: none; }
 
-@media (max-width: 720px) {
-    .g-btn {
-        width: 100%;
-        padding: 26px 20px;
-        font-size: 16px;
-    }
-}
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
@@ -170,19 +166,15 @@ p { margin: 0; }
     gap: 30px;
 }
 .hero-col-text {
-    flex: 0 0 45%;
-    max-width: 45%;
-    padding-left: 8.33%;
+    flex: 0 1 50%;
+    max-width: 60%;
+    padding-left: 8%;
 }
 .hero-col-img {
     flex: 1;
 }
 .hero-col-img img {
     width: 100%;
-    animation: fadeInRight 0.9s 0.3s ease both;
-}
-.hero-col-img img:hover {
-    animation: float 3s ease-in-out infinite;
 }
 
 .hero-title {
@@ -267,8 +259,7 @@ p { margin: 0; }
     margin-bottom: 5px;
 }
 .hero-mobile-cta .g-btn {
-    color: #fff;
-    background-color: #F66297;
+    color: #000;
 }
 .hero-mobile-vpn {
     font-size: 14px;
@@ -465,7 +456,6 @@ p { margin: 0; }
     margin-top: 20px;
 }
 .proof-cta .g-btn {
-    width: 100%;
 }
 
 @media (max-width: 1020px) {
@@ -557,9 +547,6 @@ p { margin: 0; }
 }
 .modal-form input::placeholder { color: #8C8C8C; font-weight: 500; }
 .modal-form .g-btn {
-    width: 100%;
-    padding: 22px 20px;
-    color: #000;
     margin-top: 4px;
 }
 .modal-note {
