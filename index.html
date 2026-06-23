@@ -1,642 +1,782 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фитнес с Катей Усмановой</title>
-    <meta name="description" content="Авторские фитнес-программы чемпионки: похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов. Без диет.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фитнес с Катей Усмановой — похудение, фигура, зал, форма после родов</title>
+<meta name="description" content="Авторские фитнес-программы чемпионки: похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов. Без диет.">
+<link rel="shortcut icon" href="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/240/h/fb783df3c47bb9bdf8432ac158d24131.png">
 
-        :root {
-            --pink: #F66297;
-            --pink-light: #F97EBF;
-            --dark: #000;
-            --gray: #555;
-            --light-gray: #777;
-            --bg: #F3F3F3;
-            --white: #fff;
-            --radius: 30px;
-        }
+<style>
+/* ===== FONTS ===== */
+@font-face {
+    font-family: 'Gilroy';
+    src: url('https://usmanovafit.gymteam.ru/fileservice/file/download/h/c5ad85b5bf16600a49d40ad5ed235e33.woff/a/934144/sc/228') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('https://usmanovafit.gymteam.ru/fileservice/file/download/h/6e5d6a1c28b12636f6043ff99fc0ce86.woff/a/934144/sc/205') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('https://usmanovafit.gymteam.ru/fileservice/file/download/h/a0b69f25a8d7f98144131ebbd1a90d1e.woff/a/934144/sc/234') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-weight: 400;
-            color: var(--dark);
-            background: var(--bg);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Gilroy', Roboto, sans-serif;
+    font-weight: 400;
+    color: #000;
+    background: #F3F3F3;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+a { transition: all 0.3s; text-decoration: none; color: inherit; }
+a:hover { text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+button { font-family: 'Gilroy', Roboto, sans-serif; cursor: pointer; border: none; outline: none; }
+p { margin: 0; }
 
-        a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
-        a:hover { opacity: 0.85; }
-        img { max-width: 100%; height: auto; display: block; }
-        button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+/* ===== BUTTON STYLE (matches .g button.btn.f-btn) ===== */
+.g-btn {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    background-color: #F66297;
+    color: #000;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 600;
+    border-radius: 100px;
+    padding: 30px 40px;
+    min-height: auto;
+    transition: all 0.2s;
+    font-family: 'Gilroy', Roboto, sans-serif;
+}
+.g-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(246,98,151,0.3);
+}
+.g-btn:active { transform: translateY(2px); box-shadow: none; }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(246,98,151,0.4); }
-            50% { box-shadow: 0 0 0 16px rgba(246,98,151,0); }
-        }
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes liveDot {
-            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(76,217,100,0.6); }
-            50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(76,217,100,0); }
-        }
+@media (max-width: 720px) {
+    .g-btn {
+        width: 100%;
+        padding: 26px 20px;
+        font-size: 16px;
+    }
+}
 
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-35px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(35px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(246,98,151,0.35); }
+    50% { box-shadow: 0 0 0 14px rgba(246,98,151,0); }
+}
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+@keyframes slideInItem {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
 
-        /* ===== CTA BUTTON ===== */
-        .cta-btn {
-            display: inline-block;
-            background: var(--pink);
-            color: var(--white);
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 22px 48px;
-            border-radius: 100px;
-            transition: all 0.25s ease;
-            position: relative;
-            overflow: hidden;
-            animation: pulse 2.5s infinite;
-        }
-        .cta-btn::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-            background-size: 200% 100%;
-            animation: shimmer 3s infinite;
-        }
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(246,98,151,0.35);
-            opacity: 1;
-        }
-        .cta-btn:active { transform: translateY(1px); }
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
 
-        /* ===== SCREEN 1 — HERO ===== */
-        .hero {
-            background: var(--white);
-            padding: 60px 0 0;
-            overflow: hidden;
-        }
-        .hero .container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        .hero-text {
-            flex: 1;
-            min-width: 0;
-        }
-        .hero-text h1 {
-            font-size: 38px;
-            font-weight: 700;
-            line-height: 1.15;
-            color: var(--pink);
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            animation: fadeInLeft 0.8s ease both;
-        }
-        .hero-text .subtitle {
-            font-size: 24px;
-            font-weight: 500;
-            color: var(--pink);
-            line-height: 1.3;
-            margin-bottom: 48px;
-            animation: fadeInLeft 0.8s 0.15s ease both;
-        }
-        .hero-text .description {
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--dark);
-            line-height: 1.45;
-            margin-bottom: 48px;
-            animation: fadeInLeft 0.8s 0.3s ease both;
-        }
-        .hero-text .cta-btn {
-            animation: fadeInUp 0.8s 0.45s ease both;
-        }
-        .hero-text .vpn-note {
-            font-size: 14px;
-            color: var(--light-gray);
-            font-weight: 500;
-            margin-top: 12px;
-            animation: fadeInUp 0.8s 0.55s ease both;
-        }
-        .hero-image {
-            flex: 1;
-            min-width: 0;
-            animation: fadeInRight 1s 0.3s ease both;
-        }
-        .hero-image img {
-            animation: float 4s ease-in-out infinite;
-            border-radius: 20px;
-        }
+/* Button pulse */
+.g-btn-animated {
+    animation: pulse 2.5s infinite;
+    position: relative;
+    overflow: hidden;
+}
+.g-btn-animated::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+}
 
-        /* ===== SCREEN 2 — ABOUT ===== */
-        .about {
-            padding: 80px 0;
-        }
-        .about-title {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 500;
-            line-height: 1.3;
-            margin-bottom: 12px;
-        }
-        .about-title .accent { color: var(--pink); }
-        .about-desc {
-            text-align: center;
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 1.4;
-            margin-bottom: 32px;
-            color: var(--dark);
-        }
-        .about-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 28px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .about-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            margin-bottom: 16px;
-        }
-        .about-item:last-child { margin-bottom: 0; }
-        .about-item-icon {
-            width: 30px;
-            height: 30px;
-            flex-shrink: 0;
-            background: var(--pink);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .about-item-icon svg {
-            width: 16px; height: 16px; fill: var(--white);
-        }
-        .about-item-text {
-            font-size: 16px;
-            font-weight: 400;
-            color: var(--dark);
-            line-height: 1.4;
-        }
+/* =========================================================
+   SCREEN 1 — HERO (Desktop: two-column, Mobile: stacked)
+   ========================================================= */
+.hero {
+    background: #fff;
+    padding: 30px 0 0;
+}
+.hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.hero-col-text {
+    flex: 0 0 45%;
+    max-width: 45%;
+    padding-left: 8.33%;
+}
+.hero-col-img {
+    flex: 1;
+}
+.hero-col-img img {
+    width: 100%;
+    animation: fadeInRight 0.9s 0.3s ease both;
+}
+.hero-col-img img:hover {
+    animation: float 3s ease-in-out infinite;
+}
 
-        /* Slider */
-        .slider-section {
-            margin-top: 28px;
-        }
-        .slider-wrapper {
-            display: flex;
-            gap: 16px;
-            overflow-x: auto;
-            padding-bottom: 12px;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: var(--pink) transparent;
-        }
-        .slider-wrapper::-webkit-scrollbar { height: 5px; }
-        .slider-wrapper::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 3px; }
-        .slider-item {
-            flex: 0 0 auto;
-            scroll-snap-align: start;
-            transition: transform 0.3s;
-        }
-        .slider-item:hover { transform: scale(1.04); }
-        .slider-item img {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-        .swipe-hint {
-            font-size: 12px;
-            color: var(--pink);
-            font-weight: 500;
-            margin-top: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            justify-content: center;
-        }
-        .swipe-hint svg { width: 16px; height: 16px; fill: var(--pink); }
+.hero-title {
+    font-size: 36px;
+    line-height: 1.2;
+    color: #F66297;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    animation: fadeInLeft 0.7s ease both;
+}
+.hero-subtitle {
+    font-size: 26px;
+    line-height: 1.2;
+    color: #F66297;
+    font-weight: 500;
+    margin-bottom: 60px;
+    animation: fadeInLeft 0.7s 0.12s ease both;
+}
+.hero-desc {
+    font-size: 18px;
+    line-height: 1.2;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 60px;
+    animation: fadeInLeft 0.7s 0.24s ease both;
+}
+.hero-cta {
+    animation: fadeInUp 0.7s 0.36s ease both;
+}
+.hero-vpn {
+    font-size: 16px;
+    line-height: 1.2;
+    color: #777;
+    font-weight: 500;
+    margin-top: 5px;
+    animation: fadeIn 0.7s 0.5s ease both;
+}
 
-        /* ===== SCREEN 3 — SOCIAL PROOF ===== */
-        .proof {
-            padding: 80px 0;
-        }
-        .proof-title {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 500;
-            line-height: 1.3;
-            margin-bottom: 12px;
-        }
-        .proof-title .accent { color: var(--pink); }
-        .proof-subtitle {
-            text-align: center;
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 32px;
-        }
-        .proof-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 28px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .proof-squares {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
-        }
-        .proof-square {
-            width: 200px;
-            height: 200px;
-            border-radius: 24px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            transition: transform 0.35s, box-shadow 0.35s;
-            overflow: hidden;
-        }
-        .proof-square::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(246,98,151,0) 60%, rgba(246,98,151,0.15) 100%);
-            opacity: 0;
-            transition: opacity 0.35s;
-        }
-        .proof-square:hover {
-            transform: scale(1.06);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-        }
-        .proof-square:hover::after { opacity: 1; }
+/* Mobile hero */
+.hero-mobile {
+    display: none;
+    background: #F3F3F3;
+    padding: 45px 0;
+}
+.hero-mobile-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    margin: 0 15px;
+}
+.hero-mobile-title {
+    font-size: 26px;
+    line-height: 1.2;
+    color: #F66297;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.hero-mobile-subtitle {
+    font-size: 20px;
+    line-height: 1.2;
+    color: #F66297;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.hero-mobile-img {
+    margin: -10px auto;
+}
+.hero-mobile-img img {
+    max-width: 100%;
+}
+.hero-mobile-desc {
+    font-size: 16px;
+    line-height: 1.2;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.hero-mobile-cta {
+    margin-bottom: 5px;
+}
+.hero-mobile-cta .g-btn {
+    color: #fff;
+    background-color: #F66297;
+}
+.hero-mobile-vpn {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #777;
+    font-weight: 500;
+}
 
-        .proof-cta {
-            text-align: center;
-            margin-top: 28px;
-        }
-        .proof-cta .cta-btn {
-            width: 100%;
-            max-width: 500px;
-        }
+@media (max-width: 1020px) {
+    .hero { display: none; }
+    .hero-mobile { display: block; }
+}
 
-        /* ===== FORM SECTION ===== */
-        #form {
-            padding: 80px 0;
-            background: var(--white);
-        }
-        .form-card {
-            max-width: 520px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .form-card h2 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--pink);
-        }
-        .form-card p {
-            font-size: 16px;
-            color: var(--gray);
-            margin-bottom: 28px;
-            line-height: 1.4;
-        }
-        .form-card input {
-            width: 100%;
-            border: 1px solid #D6DBD6;
-            border-radius: 12px;
-            padding: 18px 20px;
-            font-size: 16px;
-            font-weight: 500;
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            margin-bottom: 14px;
-            -webkit-appearance: none;
-        }
-        .form-card input:focus {
-            border-color: var(--pink);
-            box-shadow: 0 0 0 3px rgba(246,98,151,0.12);
-        }
-        .form-card input::placeholder { color: #8C8C8C; font-weight: 500; }
-        .form-card .cta-btn {
-            width: 100%;
-            padding: 20px;
-            font-size: 15px;
-            margin-top: 4px;
-        }
-        .form-card .form-note {
-            font-size: 13px;
-            color: #aaa;
-            margin-top: 14px;
-        }
-        .form-success {
-            display: none;
-            padding: 32px;
-            text-align: center;
-        }
-        .form-success.show { display: block; }
-        .form-success h3 {
-            font-size: 22px;
-            color: var(--pink);
-            margin-bottom: 10px;
-        }
-        .form-success p { font-size: 16px; color: var(--gray); }
+/* =========================================================
+   SCREEN 2 — ABOUT KATYA
+   ========================================================= */
+.about-section {
+    padding: 60px 0;
+    background: #F3F3F3;
+}
+.about-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.about-title {
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-title .accent { color: #F66297; }
+.about-desc {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-card {
+    background: #fff;
+    border-radius: 30px;
+    padding: 15px;
+    overflow: hidden;
+}
 
-        /* ===== MOBILE ===== */
-        @media (max-width: 768px) {
-            .hero { padding: 40px 0 0; }
-            .hero .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-text h1 { font-size: 26px; }
-            .hero-text .subtitle { font-size: 18px; margin-bottom: 24px; }
-            .hero-text .description { font-size: 16px; margin-bottom: 28px; }
-            .cta-btn {
-                width: 100%;
-                padding: 20px 24px;
-                font-size: 14px;
-            }
-            .hero-image { order: -1; margin-bottom: -10px; }
-            .hero-image img { max-width: 85%; margin: 0 auto; }
-            .about-title, .proof-title { font-size: 22px; }
-            .about-desc { font-size: 16px; }
-            .slider-item img { width: 180px; height: 180px; }
-            .proof-square { width: 150px; height: 150px; }
-            .about, .proof { padding: 50px 0; }
-            .form-card h2 { font-size: 24px; }
-        }
+/* Achievement items */
+.gc-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.gc-info-item:last-of-type { margin-bottom: 0; }
+.gc-info-item img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.gc-info-text .accent {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    text-align: left;
+}
 
-        @media (max-width: 380px) {
-            .hero-text h1 { font-size: 22px; }
-            .hero-text .subtitle { font-size: 16px; }
-            .proof-square { width: 130px; height: 130px; }
-        }
+/* Animate items on scroll */
+.about-card .gc-info-item {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+.about-card.visible .gc-info-item {
+    animation: slideInItem 0.5s ease forwards;
+}
+.about-card.visible .gc-info-item:nth-child(1) { animation-delay: 0s; }
+.about-card.visible .gc-info-item:nth-child(2) { animation-delay: 0.08s; }
+.about-card.visible .gc-info-item:nth-child(3) { animation-delay: 0.16s; }
+.about-card.visible .gc-info-item:nth-child(4) { animation-delay: 0.24s; }
+.about-card.visible .gc-info-item:nth-child(5) { animation-delay: 0.32s; }
 
-        /* Particles background */
-        .particles {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-        .particle {
-            position: absolute;
-            width: 6px; height: 6px;
-            background: var(--pink);
-            border-radius: 50%;
-            opacity: 0.12;
-            animation: particleFloat 8s infinite ease-in-out;
-        }
-        @keyframes particleFloat {
-            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.12; }
-            25% { transform: translateY(-60px) translateX(20px); opacity: 0.2; }
-            50% { transform: translateY(-30px) translateX(-15px); opacity: 0.08; }
-            75% { transform: translateY(-80px) translateX(10px); opacity: 0.15; }
-        }
+/* Photo slider */
+.gc-slider-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+.gc-slider-wrapper::-webkit-scrollbar { height: 6px; }
+.gc-slider-wrapper::-webkit-scrollbar-thumb { background: #F66297; border-radius: 1px; }
+.gc-slider-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    transition: transform 0.3s;
+}
+.gc-slider-item:hover { transform: scale(1.04); }
+.gc-slider-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+.gc-slider-text2 {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #F66297;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+}
+.gc-slider-text2 .arrow-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+}
 
-        section { position: relative; z-index: 1; }
-    </style>
+@media (max-width: 1020px) {
+    .about-section { padding: 45px 0; }
+    .about-title { font-size: 22px; }
+    .about-desc { font-size: 16px; }
+    .gc-slider-item img { width: 200px; height: 200px; }
+}
+
+/* =========================================================
+   SCREEN 3 — SOCIAL PROOF
+   ========================================================= */
+.proof-section {
+    padding: 60px 0;
+    background: #F3F3F3;
+}
+.proof-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.proof-title {
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.proof-title .accent { color: #F66297; }
+.proof-card {
+    background: #fff;
+    border-radius: 30px;
+    padding: 15px;
+}
+.gc-squares-description {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+}
+.gc-squares-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+.gc-square {
+    width: 250px;
+    height: 250px;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: transform 0.35s, box-shadow 0.35s;
+    overflow: hidden;
+}
+.gc-square::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(246,98,151,0) 50%, rgba(246,98,151,0.12) 100%);
+    opacity: 0;
+    transition: opacity 0.35s;
+}
+.gc-square:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.gc-square:hover::after { opacity: 1; }
+
+.proof-cta {
+    text-align: center;
+    margin-top: 20px;
+}
+.proof-cta .g-btn {
+    width: 100%;
+}
+
+@media (max-width: 1020px) {
+    .proof-section { padding: 45px 0; }
+    .proof-title { font-size: 22px; }
+    .gc-square { width: 150px; height: 150px; }
+    .gc-squares-description { font-size: 16px; }
+}
+
+/* =========================================================
+   POPUP MODAL FORM
+   ========================================================= */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(11,12,15,0.8);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 30px 30px;
+    max-width: 460px;
+    width: 100%;
+    position: relative;
+    animation: scaleIn 0.35s ease both;
+}
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    background: #F3F3F3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+    transition: background 0.2s;
+    border: none;
+    font-family: 'Gilroy', sans-serif;
+}
+.modal-close:hover { background: #e0e0e0; }
+.modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #F66297;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.modal-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+.modal-form input {
+    width: 100%;
+    border: 1px solid #D6DBD6;
+    border-radius: 8px;
+    background: #fff;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+    font-family: 'Gilroy', Roboto, sans-serif;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    height: 58px;
+    margin-bottom: 12px;
+    -webkit-appearance: none;
+}
+.modal-form input:focus {
+    border-color: #FF2686;
+    box-shadow: 0 0 0 3px rgba(246,98,151,0.1);
+}
+.modal-form input::placeholder { color: #8C8C8C; font-weight: 500; }
+.modal-form .g-btn {
+    width: 100%;
+    padding: 22px 20px;
+    color: #000;
+    margin-top: 4px;
+}
+.modal-note {
+    font-size: 13px;
+    color: #aaa;
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.4;
+}
+.modal-success {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+}
+.modal-success.show { display: block; }
+.modal-success h3 {
+    font-size: 22px;
+    color: #F66297;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.modal-success p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+    .modal-box { padding: 30px 15px 20px; }
+    .modal-form input { font-size: 18px; height: 60px; text-align: center; }
+}
+</style>
 </head>
 <body>
 
-<!-- Floating particles -->
-<div class="particles" id="particles"></div>
-
-<!-- SCREEN 1: HERO -->
+<!-- ==================== SCREEN 1: HERO (Desktop) ==================== -->
 <section class="hero">
-    <div class="container">
-        <div class="hero-text">
-            <h1>Приведите тело в форму с&nbsp;чемпионкой Катей Усмановой</h1>
-            <div class="subtitle">без диет, голода и&nbsp;запретов<br>с&nbsp;пользой для здоровья</div>
-            <div class="description">
-                Похудеть, подтянуть попу и&nbsp;живот, набрать форму в&nbsp;зале,
-                восстановиться после родов&nbsp;&mdash; тренировки и&nbsp;питание под вашу цель
-            </div>
-            <a href="#form" class="cta-btn">Выбрать программу</a>
-            <div class="vpn-note">Для корректной работы сайта отключите VPN</div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-col-text">
+        <p class="hero-title">Приведите тело в форму с чемпионкой Катей Усмановой</p>
+        <p class="hero-subtitle">без диет, голода и запретов<br>с пользой для здоровья</p>
+        <p class="hero-desc">Похудеть, подтянуть попу и живот, набрать форму<br>в зале, восстановиться после родов — тренировки<br>и питание под вашу цель</p>
+        <div class="hero-cta">
+          <button class="g-btn g-btn-animated js-open-form">Выбрать программу</button>
         </div>
-        <div class="hero-image">
-            <img src="https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/8d7e3aa384b597937b9504925ead6325.png/s/s1200x/a/934144/sc/68" alt="Катя Усманова">
-        </div>
+        <p class="hero-vpn">Для корректной работы сайта отключите VPN</p>
+      </div>
+      <div class="hero-col-img">
+        <img src="https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/8d7e3aa384b597937b9504925ead6325.png/s/s1200x/a/934144/sc/68" alt="Катя Усманова">
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- SCREEN 2: ABOUT -->
-<section class="about">
-    <div class="container">
-        <h2 class="about-title animate-on-scroll">
-            Доверьте свое тело чемпионке фитнес-бикини и&nbsp;тренеру <span class="accent">Кате Усмановой</span>
-        </h2>
-        <p class="about-desc animate-on-scroll delay-1">
-            С&nbsp;2015 года создаёт топовые тренировки для идеальных ягодиц, плоского живота и&nbsp;стройности без жёстких диет.<br>
-            Уже более 580&nbsp;000+ участниц тренируются с&nbsp;Катей, ведь она:
-        </p>
-
-        <div class="about-card animate-on-scroll delay-2">
-            <div class="about-item">
-                <div class="about-item-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <span class="about-item-text">Вице-чемпионка мира и&nbsp;чемпионка России по&nbsp;фитнес-бикини</span>
-            </div>
-            <div class="about-item">
-                <div class="about-item-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <span class="about-item-text">Профессиональный фитнес-тренер с&nbsp;опытом более 15&nbsp;лет</span>
-            </div>
-            <div class="about-item">
-                <div class="about-item-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <span class="about-item-text">Мама 2&#8209;х детей. Всего за&nbsp;100&nbsp;дней после первых родов похудела на&nbsp;20&nbsp;кг и&nbsp;вернулась в&nbsp;прежнюю форму</span>
-            </div>
-            <div class="about-item">
-                <div class="about-item-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <span class="about-item-text">Автор первых в&nbsp;России масштабных марафонов стройности</span>
-            </div>
-            <div class="about-item">
-                <div class="about-item-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <span class="about-item-text">Чемпионка России и&nbsp;мира по&nbsp;жиму лёжа</span>
-            </div>
-
-            <div class="slider-section">
-                <div class="slider-wrapper">
-                    <div class="slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/220/h/c79ef9787c5e268d93a54f1e02e46ec3.png" alt="" loading="lazy"></div>
-                    <div class="slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/284/h/1383cc163d1d98ed9a0bc68d4a2ffc03.png" alt="" loading="lazy"></div>
-                    <div class="slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/464/h/fc6a33bedad095fcceb9b228a0e26ba1.png" alt="" loading="lazy"></div>
-                    <div class="slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/484/h/52d50659565480b991c629cf6453df15.png" alt="" loading="lazy"></div>
-                    <div class="slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/361/h/4b1c3f214dc7c40c17af48103ddcbdeb.png" alt="" loading="lazy"></div>
-                    <div class="slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/250/h/fde40eec42d735ce23b758f6b8282d08.png" alt="" loading="lazy"></div>
-                    <div class="slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/327/h/d4d3841aca9fb0bd2b9666c23d217cfa.png" alt="" loading="lazy"></div>
-                    <div class="slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/492/h/8a1d46cc0fd29eca5de6eee284ff79ab.png" alt="" loading="lazy"></div>
-                    <div class="slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/345/h/ad4b02d76a6edaa89ff9eb93052b54e9.png" alt="" loading="lazy"></div>
-                </div>
-                <div class="swipe-hint">
-                    Листайте вправо
-                    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-                </div>
-            </div>
-        </div>
+<!-- ==================== SCREEN 1: HERO (Mobile) ==================== -->
+<section class="hero-mobile">
+  <div class="hero-mobile-card">
+    <p class="hero-mobile-title reveal">Приведите тело в форму<br>с чемпионкой Катей Усмановой</p>
+    <p class="hero-mobile-subtitle reveal delay-1">без диет, голода и запретов<br>с пользой для здоровья</p>
+    <div class="hero-mobile-img reveal delay-1">
+      <img src="https://fs-thb01.getcourse.ru/fileservice/file/thumbnail/h/0ab22056b482979979f9203c2db57c87.png/s/s1200x/a/934144/sc/17" alt="Катя Усманова">
     </div>
+    <p class="hero-mobile-desc reveal delay-2">Похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов — тренировки и питание под вашу цель</p>
+    <div class="hero-mobile-cta reveal delay-2">
+      <button class="g-btn g-btn-animated js-open-form" style="color:#fff; background-color:#F66297;">Выбрать программу</button>
+    </div>
+    <p class="hero-mobile-vpn reveal delay-3">Для корректной работы сайта отключите VPN</p>
+  </div>
 </section>
 
-<!-- SCREEN 3: SOCIAL PROOF -->
-<section class="proof">
-    <div class="container">
-        <h2 class="proof-title animate-on-scroll">
-            Кате доверяют миллионы.<br><span class="accent">Её методы работают</span>&nbsp;&mdash; и&nbsp;об&nbsp;этом говорят все
-        </h2>
-        <p class="proof-subtitle animate-on-scroll delay-1">
-            580&nbsp;000+ учениц. Подкасты. Статьи в&nbsp;СМИ. Коллаборации со&nbsp;звёздами.
-        </p>
+<!-- ==================== SCREEN 2: ABOUT ==================== -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-wrapper">
+      <p class="about-title reveal">Доверьте свое тело чемпионке фитнес-бикини и&nbsp;тренеру <span class="accent">Кате Усмановой</span></p>
+      <p class="about-desc reveal delay-1">С&nbsp;2015 года создаёт топовые тренировки для идеальных ягодиц, плоского живота и стройности без жёстких диет.<br>Уже более 580&nbsp;000+ участниц тренируются с Катей, ведь она:</p>
 
-        <div class="proof-card animate-on-scroll delay-2">
-            <div class="proof-squares">
-                <div class="proof-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/388/h/dce4cd87e1adbe9bb964e4f421a812b8.png')"></div>
-                <div class="proof-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/243/h/ab7526618678a10df39f0b43b18beedf.png')"></div>
-                <div class="proof-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/38/h/1945477762597b2c2c8e4cf8619c9d69.png')"></div>
-                <div class="proof-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/193/h/e9ae4aeeb45b346179a1450139c3d8d5.png')"></div>
-            </div>
+      <div class="about-card reveal delay-2" id="aboutCard">
+
+        <div class="gc-info-item">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+          <div class="gc-info-text"><span class="accent">Вице-чемпионка мира и&nbsp;чемпионка России по&nbsp;фитнес-бикини</span></div>
+        </div>
+        <div class="gc-info-item">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+          <div class="gc-info-text"><span class="accent">Профессиональный фитнес-тренер с&nbsp;опытом более 15&nbsp;лет</span></div>
+        </div>
+        <div class="gc-info-item">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+          <div class="gc-info-text"><span class="accent">Мама 2-х детей. Всего за&nbsp;100&nbsp;дней после&nbsp;первых родов похудела на&nbsp;20&nbsp;кг&nbsp;и&nbsp;вернулась в&nbsp;прежнюю форму</span></div>
+        </div>
+        <div class="gc-info-item">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+          <div class="gc-info-text"><span class="accent">Автор первых в&nbsp;России масштабных марафонов стройности</span></div>
+        </div>
+        <div class="gc-info-item">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/304/h/b9c77eb09cdae6dee48606d88134a74c.png" alt="">
+          <div class="gc-info-text"><span class="accent">Чемпионка России и&nbsp;мира по&nbsp;жиму лёжа</span></div>
         </div>
 
-        <div class="proof-cta animate-on-scroll delay-3">
-            <a href="#form" class="cta-btn">Вернуть форму</a>
+        <div class="gc-slider-wrapper">
+          <div class="gc-slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/220/h/c79ef9787c5e268d93a54f1e02e46ec3.png" alt="" loading="lazy"></div>
+          <div class="gc-slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/284/h/1383cc163d1d98ed9a0bc68d4a2ffc03.png" alt="" loading="lazy"></div>
+          <div class="gc-slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/464/h/fc6a33bedad095fcceb9b228a0e26ba1.png" alt="" loading="lazy"></div>
+          <div class="gc-slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/484/h/52d50659565480b991c629cf6453df15.png" alt="" loading="lazy"></div>
+          <div class="gc-slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/361/h/4b1c3f214dc7c40c17af48103ddcbdeb.png" alt="" loading="lazy"></div>
+          <div class="gc-slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/250/h/fde40eec42d735ce23b758f6b8282d08.png" alt="" loading="lazy"></div>
+          <div class="gc-slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/327/h/d4d3841aca9fb0bd2b9666c23d217cfa.png" alt="" loading="lazy"></div>
+          <div class="gc-slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/492/h/8a1d46cc0fd29eca5de6eee284ff79ab.png" alt="" loading="lazy"></div>
+          <div class="gc-slider-item"><img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/345/h/ad4b02d76a6edaa89ff9eb93052b54e9.png" alt="" loading="lazy"></div>
         </div>
+
+        <div class="gc-slider-text2">
+          Листайте вправо
+          <img class="arrow-icon" src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/295/h/3e5dd3a1d566a7f5fc0745fff3f0158c.png" alt="">
+        </div>
+
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- FORM -->
-<section id="form">
-    <div class="container">
-        <div class="form-card animate-on-scroll">
-            <div id="formFields">
-                <h2>Начните сейчас</h2>
-                <p>Оставьте контакт&nbsp;&mdash; мы поможем подобрать программу под вашу цель</p>
-                <form id="contactForm">
-                    <input type="text" name="name" placeholder="Ваше имя" required autocomplete="given-name">
-                    <input type="email" name="email" placeholder="E-mail" required autocomplete="email">
-                    <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel">
-                    <button type="submit" class="cta-btn">Получить программу</button>
-                </form>
-                <div class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</div>
-            </div>
-            <div class="form-success" id="formSuccess">
-                <h3>Спасибо!</h3>
-                <p>Мы получили вашу заявку и&nbsp;скоро свяжемся с&nbsp;вами, чтобы подобрать идеальную программу.</p>
-            </div>
+<!-- ==================== SCREEN 3: SOCIAL PROOF ==================== -->
+<section class="proof-section">
+  <div class="container">
+    <div class="proof-wrapper">
+      <p class="proof-title reveal">Кате доверяют миллионы.<span class="accent"> Её методы работают</span> — и об этом говорят все</p>
+
+      <div class="proof-card reveal delay-1">
+        <div class="gc-squares-description">580 000+ учениц. Подкасты. Статьи<br>в СМИ. Коллаборации с звёздами.</div>
+        <div class="gc-squares-grid">
+          <div class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/388/h/dce4cd87e1adbe9bb964e4f421a812b8.png');"></div>
+          <div class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/243/h/ab7526618678a10df39f0b43b18beedf.png');"></div>
+          <div class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/38/h/1945477762597b2c2c8e4cf8619c9d69.png');"></div>
+          <div class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/193/h/e9ae4aeeb45b346179a1450139c3d8d5.png');"></div>
         </div>
+      </div>
+
+      <div class="proof-cta reveal delay-2">
+        <button class="g-btn g-btn-animated js-open-form">Вернуть форму</button>
+      </div>
     </div>
+  </div>
 </section>
+
+<!-- ==================== POPUP FORM ==================== -->
+<div class="modal-overlay" id="formModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div id="formFields">
+      <p class="modal-title">Начните сейчас</p>
+      <p class="modal-desc">Оставьте контакт — мы поможем подобрать программу под вашу цель</p>
+      <form class="modal-form" id="contactForm">
+        <input type="text" name="name" placeholder="Ваше имя" required autocomplete="given-name">
+        <input type="email" name="email" placeholder="E-mail" required autocomplete="email">
+        <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel">
+        <button type="submit" class="g-btn g-btn-animated">Получить программу</button>
+      </form>
+      <p class="modal-note">Нажимая кнопку, вы соглашаетесь с&nbsp;политикой конфиденциальности</p>
+    </div>
+    <div class="modal-success" id="formSuccess">
+      <h3>Спасибо!</h3>
+      <p>Мы получили вашу заявку и&nbsp;скоро свяжемся с&nbsp;вами, чтобы подобрать идеальную программу.</p>
+    </div>
+  </div>
+</div>
 
 <script>
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-});
-
-// Form handling
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
-    btn.textContent = 'Отправляем...';
-    btn.disabled = true;
-    setTimeout(() => {
-        document.getElementById('formFields').style.display = 'none';
-        const success = document.getElementById('formSuccess');
-        success.classList.add('show');
-        success.style.animation = 'scaleIn 0.5s ease both';
-    }, 800);
-});
-
-// Particles
+// Scroll reveal
 (function() {
-    const container = document.getElementById('particles');
-    for (let i = 0; i < 18; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.top = Math.random() * 100 + '%';
-        p.style.width = p.style.height = (3 + Math.random() * 5) + 'px';
-        p.style.animationDuration = (5 + Math.random() * 6) + 's';
-        p.style.animationDelay = Math.random() * 4 + 's';
-        container.appendChild(p);
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+})();
+
+// Modal open/close
+(function() {
+    var modal = document.getElementById('formModal');
+    var closeBtn = document.getElementById('modalClose');
+
+    document.querySelectorAll('.js-open-form').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
     }
 })();
+
+// Form submit
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Отправляем...';
+    btn.disabled = true;
+    setTimeout(function() {
+        document.getElementById('formFields').style.display = 'none';
+        var s = document.getElementById('formSuccess');
+        s.classList.add('show');
+        s.style.animation = 'scaleIn 0.4s ease both';
+    }, 700);
+});
 </script>
 
 </body>
