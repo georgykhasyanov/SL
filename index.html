@@ -33,6 +33,7 @@
 
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { overflow-x: hidden; }
 body {
     font-family: 'Gilroy', Roboto, sans-serif;
     font-weight: 400;
@@ -287,10 +288,12 @@ p { margin: 0; }
 .about-section {
     padding: 60px 0;
     background: #F3F3F3;
+    overflow: hidden;
 }
 .about-wrapper {
     max-width: 700px;
     margin: 0 auto;
+    overflow: hidden;
 }
 .about-title {
     font-size: 28px;
@@ -369,8 +372,8 @@ p { margin: 0; }
 }
 .gc-slider-item:hover { transform: scale(1.04); }
 .gc-slider-item img {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     border-radius: 30px;
 }
@@ -392,7 +395,7 @@ p { margin: 0; }
     .about-section { padding: 45px 0; }
     .about-title { font-size: 22px; }
     .about-desc { font-size: 16px; }
-    .gc-slider-item img { width: 200px; height: 200px; }
+    .gc-slider-item img { width: 300px; height: 300px; }
 }
 
 /* =========================================================
